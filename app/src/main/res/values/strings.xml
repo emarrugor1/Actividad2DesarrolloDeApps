@@ -6,4 +6,6 @@
     <string name="category_incomes">Ingresos</string>
     <string name="category_expenses">Gastos</string>
     <string name="save_category">Guardar</string>
+
+
 </resources>
