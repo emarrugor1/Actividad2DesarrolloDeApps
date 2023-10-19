@@ -12,14 +12,14 @@
         android:layout_height="27dp"
         android:layout_marginTop="56dp"
         android:fontFamily="@font/poppins"
-        android:text="Gasto"
+        android:text="@string/expense_textView"
         android:textAlignment="center"
         android:textSize="16sp"
         app:flow_horizontalAlign="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/categorySelector3"
-        app:layout_constraintTop_toBottomOf="@+id/editTextNumberDecimal"
+        app:layout_constraintStart_toEndOf="@+id/incomeOrExpenseClassifier"
+        app:layout_constraintTop_toBottomOf="@+id/valueField"
         tools:ignore="TextSizeCheck" />
 
     <TextView
@@ -28,17 +28,17 @@
         android:layout_height="26dp"
         android:layout_marginTop="56dp"
         android:fontFamily="@font/poppins"
-        android:text="Ingreso"
+        android:text="@string/income_textView"
         android:textAlignment="center"
         android:textSize="16sp"
-        app:layout_constraintEnd_toStartOf="@+id/categorySelector3"
+        app:layout_constraintEnd_toStartOf="@+id/incomeOrExpenseClassifier"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextNumberDecimal"
+        app:layout_constraintTop_toBottomOf="@+id/valueField"
         tools:ignore="TextSizeCheck" />
 
     <Switch
-        android:id="@+id/categorySelector3"
+        android:id="@+id/incomeOrExpenseClassifier"
         android:layout_width="58dp"
         android:layout_height="48dp"
         android:layout_marginTop="44dp"
@@ -47,7 +47,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextNumberDecimal"
+        app:layout_constraintTop_toBottomOf="@+id/valueField"
         tools:ignore="UseSwitchCompatOrMaterialXml" />
 
     <TextView
@@ -56,7 +56,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="52dp"
         android:fontFamily="@font/poppins_bold"
-        android:text="Registro de Ingresos y Gastos"
+        android:text="@string/incomes_and_expenses_title"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.489"
@@ -64,13 +64,13 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editTextText"
+        android:id="@+id/conceptField"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="56dp"
+        android:layout_marginTop="48dp"
         android:ems="10"
         android:fontFamily="@font/poppins"
-        android:hint="Digite el concepto"
+        android:hint="@string/concept_field_hint"
         android:inputType="text"
         android:textAlignment="center"
         android:textColor="@color/black"
@@ -82,26 +82,28 @@
         app:layout_constraintTop_toBottomOf="@+id/incomesAndExpensesTitle" />
 
     <EditText
-        android:id="@+id/editTextNumberDecimal"
+        android:id="@+id/valueField"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="56dp"
+        android:layout_marginTop="24dp"
         android:ems="10"
         android:fontFamily="@font/poppins"
-        android:hint="Digite el valor"
+        android:hint="@string/value_field_hint"
         android:includeFontPadding="true"
         android:inputType="numberDecimal"
         android:textAlignment="center"
         android:textColorHint="@color/black"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextText" />
+        app:layout_constraintTop_toBottomOf="@+id/conceptField"
+        />
 
     <Spinner
-        android:id="@+id/spinner"
+        android:id="@+id/categorySelectorList"
         android:layout_width="352dp"
-        android:layout_height="22dp"
+        android:layout_height="50dp"
         android:layout_marginTop="36dp"
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
@@ -115,12 +117,12 @@
         android:layout_marginTop="28dp"
         android:fontFamily="@font/poppins"
         android:includeFontPadding="true"
-        android:text="Elija la categoría"
+        android:text="@string/category_selector_spinner"
         android:textAlignment="center"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/categorySelector3" />
+        app:layout_constraintTop_toBottomOf="@+id/incomeOrExpenseClassifier" />
 
     <EditText
         android:id="@+id/movementDate"
@@ -133,7 +135,7 @@
         android:focusableInTouchMode="false"
         android:focusedByDefault="false"
         android:fontFamily="@font/poppins"
-        android:hint="Digite la fecha"
+        android:hint="@string/date_hint"
         android:inputType="date"
         android:keyboardNavigationCluster="false"
         android:onClick="showCalendar"
@@ -143,14 +145,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinner" />
+        app:layout_constraintTop_toBottomOf="@+id/categorySelectorList" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/saveIncomeOrExpense"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="44dp"
-        android:text="Button"
+        android:text="@string/save_income_or_expense_button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
