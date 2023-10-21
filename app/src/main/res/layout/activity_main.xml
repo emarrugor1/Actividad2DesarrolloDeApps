@@ -6,13 +6,104 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
+    <Button
+        android:id="@+id/saveCategory"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:fontFamily="@font/poppins_bold"
+        android:text="@string/save_category"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/categorySelector"
+        app:layout_constraintVertical_bias="0.205" />
+
+    <Switch
+        android:id="@+id/categorySelector"
+        android:layout_width="58dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="20dp"
+        android:showText="false"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/categoryTypeTextView"
+        tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+    <TextView
+        android:id="@+id/expensesTextView"
+        android:layout_width="85dp"
+        android:layout_height="27dp"
+        android:layout_marginTop="28dp"
+        android:fontFamily="@font/poppins"
+        android:text="@string/category_expenses"
+        android:textAlignment="center"
+        android:textSize="16sp"
+        app:flow_horizontalAlign="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/categorySelector"
+        app:layout_constraintTop_toBottomOf="@+id/categoryTypeTextView"
+        tools:ignore="TextSizeCheck" />
+
+    <EditText
+        android:id="@+id/categoryNameValue"
+        android:layout_width="237dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="40dp"
+        android:ems="10"
+        android:fontFamily="@font/poppins"
+        android:importantForAutofill="no"
+        android:inputType="text|textNoSuggestions"
+        android:text="@string/category_name"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titleTextView"
+        tools:ignore="LabelFor,TextSizeCheck"
+        tools:text="@string/category_name" />
+
+    <TextView
+        android:id="@+id/incomesTextView"
+        android:layout_width="81dp"
+        android:layout_height="26dp"
+        android:layout_marginTop="28dp"
+        android:fontFamily="@font/poppins"
+        android:text="@string/category_incomes"
+        android:textAlignment="center"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toStartOf="@+id/categorySelector"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/categoryTypeTextView"
+        tools:ignore="TextSizeCheck" />
+
+    <TextView
+        android:id="@+id/titleTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="152dp"
+        android:fontFamily="@font/poppins_bold"
+        android:text="@string/category_title"
+        android:textSize="30sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/categoryTypeTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:fontFamily="@font/poppins"
+        android:text="@string/category_type"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/categoryNameValue" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

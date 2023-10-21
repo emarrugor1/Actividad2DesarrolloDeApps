@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">finanzas_old_school</string>
+    <string name="category_title">Registro de Categoría</string>
+    <string name="category_name">Ingrese el nombre</string>
+    <string name="category_type">Seleccione el tipo</string>
+    <string name="category_incomes">Ingresos</string>
+    <string name="category_expenses">Gastos</string>
+    <string name="save_category">Guardar</string>
 </resources>
