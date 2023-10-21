@@ -6,4 +6,18 @@
     <string name="category_incomes">Ingresos</string>
     <string name="category_expenses">Gastos</string>
     <string name="save_category">Guardar</string>
+
+
+    <string name="incomes_and_expenses_title">Registro de Ingresos y Gastos</string>
+    <string name="concept_field_hint">Digite el concepto</string>
+    <string name="value_field_hint">Digite el valor</string>
+    <string name="income_textView">Ingreso</string>
+    <string name="expense_textView">Gasto</string>
+    <string name="date_hint">Digite la fecha</string>
+    <string name="save_income_or_expense_button">Guardar</string>
+    <string name="category_selector_spinner">Elija la categoría</string>
+    <string name="go_to_movement_form">Ir a formulario de movimientos</string>
+    <string name="go_to_category_form">Ir a formulario de categoría</string>
+    <string name="goToMovementForm">Ir a formulario de movimientos</string>
+
 </resources>
