@@ -16,5 +16,8 @@
     <string name="date_hint">Digite la fecha</string>
     <string name="save_income_or_expense_button">Guardar</string>
     <string name="category_selector_spinner">Elija la categoría</string>
+    <string name="go_to_movement_form">Ir a formulario de movimientos</string>
+    <string name="go_to_category_form">Ir a formulario de categoría</string>
+    <string name="goToMovementForm">Ir a formulario de movimientos</string>
 
 </resources>
