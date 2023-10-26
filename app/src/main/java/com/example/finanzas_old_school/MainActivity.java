@@ -14,7 +14,7 @@ import androidx.room.Room;
 import com.example.finanzas_old_school.model.config.DatabaseConfig;
 import com.example.finanzas_old_school.model.dao.CategoryDao;
 import com.example.finanzas_old_school.model.entity.CategoryEntity;
-import com.example.finanzas_old_school.model.entity.CategoryType;
+import com.example.finanzas_old_school.model.entity.Clasification;
 
 import java.util.List;
 
@@ -28,10 +28,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         toolbar = findViewById(R.id.toolbarCategory);
         setSupportActionBar(toolbar);
-        DatabaseConfig db = Room.databaseBuilder(getApplicationContext(), DatabaseConfig.class, "finanzas_db").allowMainThreadQueries().build();
+        DatabaseConfig db = Room.databaseBuilder(getApplicationContext(), DatabaseConfig.class, "finanzas_db")
+                .allowMainThreadQueries().build();
 
         CategoryEntity category = new CategoryEntity();
-        category.type = CategoryType.INGRESO;
+        category.type = Clasification.INGRESO;
         category.concept = "Concepto ejemplo";
 
         CategoryDao categoryDao = db.categoryDao();

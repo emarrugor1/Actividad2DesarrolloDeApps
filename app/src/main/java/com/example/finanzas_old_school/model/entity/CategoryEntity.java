@@ -9,6 +9,6 @@ public class CategoryEntity {
     @PrimaryKey(autoGenerate = true)
     public int id;
     @ColumnInfo(typeAffinity = ColumnInfo.TEXT)
-    public CategoryType type;
+    public Clasification type;
     public String concept;
 }
