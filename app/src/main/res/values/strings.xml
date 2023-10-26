@@ -20,4 +20,7 @@
     <string name="go_to_category_form">Ir a formulario de categoría</string>
     <string name="goToMovementForm">Ir a formulario de movimientos</string>
 
+    <string name="categoryItem">Ir a formulario de categoría</string>
+    <string name="movementsItem">Ir a formulario de movimientos</string>
+
 </resources>

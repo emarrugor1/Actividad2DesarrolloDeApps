@@ -7,54 +7,10 @@
     tools:context=".IncomesAndExpensesForm">
 
     <TextView
-        android:id="@+id/expensesTextView3"
-        android:layout_width="85dp"
-        android:layout_height="27dp"
-        android:layout_marginTop="56dp"
-        android:fontFamily="@font/poppins"
-        android:text="@string/expense_textView"
-        android:textAlignment="center"
-        android:textSize="16sp"
-        app:flow_horizontalAlign="center"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/incomeOrExpenseClassifier"
-        app:layout_constraintTop_toBottomOf="@+id/valueField"
-        tools:ignore="TextSizeCheck" />
-
-    <TextView
-        android:id="@+id/incomesTextView3"
-        android:layout_width="81dp"
-        android:layout_height="26dp"
-        android:layout_marginTop="56dp"
-        android:fontFamily="@font/poppins"
-        android:text="@string/income_textView"
-        android:textAlignment="center"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toStartOf="@+id/incomeOrExpenseClassifier"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/valueField"
-        tools:ignore="TextSizeCheck" />
-
-    <Switch
-        android:id="@+id/incomeOrExpenseClassifier"
-        android:layout_width="58dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="44dp"
-        android:showText="false"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/valueField"
-        tools:ignore="UseSwitchCompatOrMaterialXml" />
-
-    <TextView
         android:id="@+id/incomesAndExpensesTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="52dp"
+        android:layout_marginTop="76dp"
         android:fontFamily="@font/poppins_bold"
         android:text="@string/incomes_and_expenses_title"
         android:textSize="24sp"
@@ -64,71 +20,10 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/conceptField"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
-        android:ems="10"
-        android:fontFamily="@font/poppins"
-        android:hint="@string/concept_field_hint"
-        android:inputType="text"
-        android:textAlignment="center"
-        android:textColor="@color/black"
-        android:textColorHint="@color/black"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/incomesAndExpensesTitle" />
-
-    <EditText
-        android:id="@+id/valueField"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:ems="10"
-        android:fontFamily="@font/poppins"
-        android:hint="@string/value_field_hint"
-        android:includeFontPadding="true"
-        android:inputType="numberDecimal"
-        android:textAlignment="center"
-        android:textColorHint="@color/black"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/conceptField"
-        />
-
-    <Spinner
-        android:id="@+id/categorySelectorList"
-        android:layout_width="352dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="36dp"
-        android:textAlignment="center"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
-        android:fontFamily="@font/poppins"
-        android:includeFontPadding="true"
-        android:text="@string/category_selector_spinner"
-        android:textAlignment="center"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/incomeOrExpenseClassifier" />
-
-    <EditText
         android:id="@+id/movementDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="24dp"
         android:clickable="false"
         android:ems="10"
         android:focusable="false"
@@ -147,6 +42,70 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/categorySelectorList" />
 
+    <TextView
+        android:id="@+id/incomesTextView3"
+        android:layout_width="81dp"
+        android:layout_height="26dp"
+        android:layout_marginTop="48dp"
+        android:fontFamily="@font/poppins"
+        android:text="@string/income_textView"
+        android:textAlignment="center"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toStartOf="@+id/incomeOrExpenseClassifier"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/valueField"
+        tools:ignore="TextSizeCheck" />
+
+    <TextView
+        android:id="@+id/expensesTextView3"
+        android:layout_width="85dp"
+        android:layout_height="27dp"
+        android:layout_marginTop="48dp"
+        android:fontFamily="@font/poppins"
+        android:text="@string/expense_textView"
+        android:textAlignment="center"
+        android:textSize="16sp"
+        app:flow_horizontalAlign="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/incomeOrExpenseClassifier"
+        app:layout_constraintTop_toBottomOf="@+id/valueField"
+        tools:ignore="TextSizeCheck" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:fontFamily="@font/poppins"
+        android:includeFontPadding="true"
+        android:text="@string/category_selector_spinner"
+        android:textAlignment="center"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/incomeOrExpenseClassifier" />
+
+    <EditText
+        android:id="@+id/valueField"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:fontFamily="@font/poppins"
+        android:hint="@string/value_field_hint"
+        android:includeFontPadding="true"
+        android:inputType="numberDecimal"
+        android:textAlignment="center"
+        android:textColorHint="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/conceptField" />
+
     <Button
         android:id="@+id/saveIncomeOrExpense"
         android:layout_width="wrap_content"
@@ -157,6 +116,59 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/movementDate"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.04" />
+
+    <Switch
+        android:id="@+id/incomeOrExpenseClassifier"
+        android:layout_width="58dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="36dp"
+        android:showText="false"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/valueField"
+        tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+    <Spinner
+        android:id="@+id/categorySelectorList"
+        android:layout_width="352dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="52dp"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.508"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <EditText
+        android:id="@+id/conceptField"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="52dp"
+        android:ems="10"
+        android:fontFamily="@font/poppins"
+        android:hint="@string/concept_field_hint"
+        android:inputType="text"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/incomesAndExpensesTitle" />
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/movementsToolbar"
+        android:layout_width="412dp"
+        android:layout_height="63dp"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
