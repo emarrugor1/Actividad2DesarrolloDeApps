@@ -46,7 +46,7 @@ public class IncomesAndExpensesForm extends AppCompatActivity {
         int id = item.getItemId();
 
         if (id == R.id.categoryItem) {
-            Intent intent = new Intent(this, MainActivity.class);
+            Intent intent = new Intent(this, CategoryForm.class);
             startActivity(intent);
         } else if (id == R.id.movementsItem) {
             Intent intent = new Intent(this, this.getClass());

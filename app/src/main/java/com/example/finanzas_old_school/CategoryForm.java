@@ -2,6 +2,7 @@ package com.example.finanzas_old_school;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -9,16 +10,15 @@ import android.view.View;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-import androidx.room.Room;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
 
-import com.example.finanzas_old_school.model.config.DatabaseConfig;
-import com.example.finanzas_old_school.model.dao.CategoryDao;
 import com.example.finanzas_old_school.model.entity.CategoryEntity;
-import com.example.finanzas_old_school.model.entity.Clasification;
+import com.example.finanzas_old_school.viewmodel.CategoryViewModel;
 
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+public class CategoryForm extends AppCompatActivity {
     private Toolbar toolbar;
 
 
@@ -28,26 +28,24 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         toolbar = findViewById(R.id.toolbarCategory);
         setSupportActionBar(toolbar);
-        DatabaseConfig db = Room.databaseBuilder(getApplicationContext(), DatabaseConfig.class, "finanzas_db")
-                .allowMainThreadQueries().build();
+        CategoryViewModel viewModel = new ViewModelProvider(this).get(CategoryViewModel.class);
 
+        /*
         CategoryEntity category = new CategoryEntity();
         category.type = Clasification.INGRESO;
         category.concept = "Concepto ejemplo";
 
-        CategoryDao categoryDao = db.categoryDao();
-        categoryDao.insert(category);
-
-
-        List<CategoryEntity> categories = categoryDao.getAll();
-
-        /*
-        Tarea tarea = new Tarea();
-        tarea.setNombre("Tarea 1");
-        tarea.setDescripcion("Realizar una tarea importante");
-
-        db.tareaDao().insert(tarea);
+        viewModel.insert(category);
          */
+        viewModel.getAllCategories().observe(this, new Observer<List<CategoryEntity>>() {
+            @Override
+            public void onChanged(List<CategoryEntity> datos) {
+                // Actualiza la interfaz de usuario con la lista de datos obtenida
+                for (CategoryEntity miEntidad : datos) {
+                    Log.d("MiApp", "ID: " + miEntidad.id + ", Dato: " + miEntidad.concept);
+                }
+            }
+        });
     }
 
     @Override
