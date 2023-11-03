@@ -7,13 +7,59 @@ import androidx.room.PrimaryKey;
 @Entity(tableName = "movimientos")
 public class MovementEntity {
     @PrimaryKey(autoGenerate = true)
-    public int id;
+    private int id;
     @ColumnInfo(typeAffinity = ColumnInfo.TEXT)
-    public Clasification type;
-    public String concept;
-    public double value;
-    public String date;
-    public int categoryId;
+    private Clasification type;
+    private String concept;
+    private double value;
+    private String date;
+    private int categoryId;
 
+    public int getId() {
+        return id;
+    }
 
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public Clasification getType() {
+        return type;
+    }
+
+    public void setType(Clasification type) {
+        this.type = type;
+    }
+
+    public String getConcept() {
+        return concept;
+    }
+
+    public void setConcept(String concept) {
+        this.concept = concept;
+    }
+
+    public double getValue() {
+        return value;
+    }
+
+    public void setValue(double value) {
+        this.value = value;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
+
+    public int getCategoryId() {
+        return categoryId;
+    }
+
+    public void setCategoryId(int categoryId) {
+        this.categoryId = categoryId;
+    }
 }

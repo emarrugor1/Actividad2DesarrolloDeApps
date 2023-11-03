@@ -1,6 +1,5 @@
 package com.example.finanzas_old_school.view;
 
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -10,7 +9,6 @@ import android.widget.EditText;
 import android.widget.Switch;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.lifecycle.ViewModelProvider;
@@ -18,6 +16,7 @@ import androidx.lifecycle.ViewModelProvider;
 import com.example.finanzas_old_school.R;
 import com.example.finanzas_old_school.model.entity.CategoryEntity;
 import com.example.finanzas_old_school.model.entity.Clasification;
+import com.example.finanzas_old_school.util.Util;
 import com.example.finanzas_old_school.viewmodel.CategoryViewModel;
 
 public class CategoryForm extends AppCompatActivity {
@@ -75,21 +74,10 @@ public class CategoryForm extends AppCompatActivity {
         }
         try {
             viewModel.insert(category);
-            getAlertDialog("Guardado correctamente", "Has guardado una Categoría");
+            Util.getAlertDialog("Guardado correctamente", "Has guardado una Categoría", CategoryForm.this);
         } catch (Exception e){
-            getAlertDialog("Falló el guardado", "Se ha producido un error al guardar");
+            Util.getAlertDialog("Falló el guardado", "Se ha producido un error al guardar", CategoryForm.this);
         }
     }
-    public void getAlertDialog(String title, String message){
-        AlertDialog.Builder builder = new AlertDialog.Builder(CategoryForm.this);
 
-        // Configurar el título y el mensaje de la alerta
-        builder.setTitle(title)
-                .setMessage(message);
-
-        // Agregar un botón "Aceptar" para cerrar la alerta
-        builder.setPositiveButton("Aceptar", (dialog, which) -> {
-        });
-        builder.show();
-    }
 }
