@@ -1,4 +1,4 @@
-package com.example.finanzas_old_school;
+package com.example.finanzas_old_school.view;
 
 import android.app.DatePickerDialog;
 import android.content.Intent;
@@ -12,6 +12,10 @@ import android.widget.EditText;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+
+import com.example.finanzas_old_school.R;
+
+import java.text.MessageFormat;
 
 public class IncomesAndExpensesForm extends AppCompatActivity {
 
@@ -27,12 +31,10 @@ public class IncomesAndExpensesForm extends AppCompatActivity {
         setSupportActionBar(toolbar);
     }
     public void showCalendar(View view){
-        DatePickerDialog datePickerDialog = new DatePickerDialog(this, new DatePickerDialog.OnDateSetListener() {
-            @Override
-            public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-                movementDate.setText(dayOfMonth+"/"+month+"/"+year);
-            }
-        },2021,0,1);
+        DatePickerDialog datePickerDialog = new DatePickerDialog(this,
+                (view1, year, month, dayOfMonth) ->
+                        movementDate.setText(
+                                MessageFormat.format("{0}/{1}/{2}", dayOfMonth, month, year)),2021,0,1);
         datePickerDialog.show();
     }
     @Override

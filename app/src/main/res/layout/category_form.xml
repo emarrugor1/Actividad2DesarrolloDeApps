@@ -4,13 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CategoryForm">
+    tools:context=".view.CategoryForm">
 
     <Button
         android:id="@+id/saveCategory"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/poppins_bold"
+        android:onClick="insertCategory"
         android:text="@string/save_category"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -55,10 +56,11 @@
         android:layout_marginTop="40dp"
         android:ems="10"
         android:fontFamily="@font/poppins"
+        android:hint="@string/category_name"
         android:importantForAutofill="no"
         android:inputType="text|textNoSuggestions"
-        android:text="@string/category_name"
         android:textAlignment="center"
+        android:textColorHint="@color/black"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
