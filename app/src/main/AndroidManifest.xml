@@ -13,10 +13,10 @@
         android:theme="@style/Theme.Finanzas_old_school"
         tools:targetApi="33">
         <activity
-            android:name=".IncomesAndExpensesForm"
+            android:name=".view.IncomesAndExpensesForm"
             android:exported="true" />
         <activity
-            android:name=".CategoryForm"
+            android:name=".view.CategoryForm"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

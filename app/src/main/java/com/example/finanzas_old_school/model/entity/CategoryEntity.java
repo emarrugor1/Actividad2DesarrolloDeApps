@@ -7,8 +7,34 @@ import androidx.room.PrimaryKey;
 @Entity(tableName = "categorias")
 public class CategoryEntity {
     @PrimaryKey(autoGenerate = true)
-    public int id;
+    private int id;
     @ColumnInfo(typeAffinity = ColumnInfo.TEXT)
-    public Clasification type;
-    public String concept;
+    private Clasification type;
+    @ColumnInfo(typeAffinity = ColumnInfo.TEXT)
+    private String concept;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public Clasification getType() {
+        return type;
+    }
+
+    public void setType(Clasification type) {
+        this.type = type;
+    }
+
+    public String getConcept() {
+        return concept;
+    }
+
+    public void setConcept(String concept) {
+        this.concept = concept;
+    }
+
 }

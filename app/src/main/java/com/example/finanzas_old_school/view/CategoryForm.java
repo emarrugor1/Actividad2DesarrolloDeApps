@@ -1,51 +1,37 @@
-package com.example.finanzas_old_school;
+package com.example.finanzas_old_school.view;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.EditText;
+import android.widget.Switch;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.example.finanzas_old_school.R;
 import com.example.finanzas_old_school.model.entity.CategoryEntity;
+import com.example.finanzas_old_school.model.entity.Clasification;
+import com.example.finanzas_old_school.util.Util;
 import com.example.finanzas_old_school.viewmodel.CategoryViewModel;
-
-import java.util.List;
 
 public class CategoryForm extends AppCompatActivity {
     private Toolbar toolbar;
-
+    private EditText categoryNameTextView;
+    private Switch categorySelector;
+    private CategoryViewModel viewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.category_form);
         toolbar = findViewById(R.id.toolbarCategory);
         setSupportActionBar(toolbar);
-        CategoryViewModel viewModel = new ViewModelProvider(this).get(CategoryViewModel.class);
-
-        /*
-        CategoryEntity category = new CategoryEntity();
-        category.type = Clasification.INGRESO;
-        category.concept = "Concepto ejemplo";
-
-        viewModel.insert(category);
-         */
-        viewModel.getAllCategories().observe(this, new Observer<List<CategoryEntity>>() {
-            @Override
-            public void onChanged(List<CategoryEntity> datos) {
-                // Actualiza la interfaz de usuario con la lista de datos obtenida
-                for (CategoryEntity miEntidad : datos) {
-                    Log.d("MiApp", "ID: " + miEntidad.id + ", Dato: " + miEntidad.concept);
-                }
-            }
-        });
+        viewModel = new ViewModelProvider(this).get(CategoryViewModel.class);
     }
 
     @Override
@@ -72,4 +58,26 @@ public class CategoryForm extends AppCompatActivity {
         Intent intent = new Intent(this, IncomesAndExpensesForm.class);
         startActivity(intent);
     }
+    public void insertCategory(View view){
+        categoryNameTextView = findViewById(R.id.categoryNameValue);
+        categorySelector = findViewById(R.id.categorySelector);
+
+        String categoryName = categoryNameTextView.getText().toString();
+        boolean isForExpenses = categorySelector.isChecked();
+
+        CategoryEntity category = new CategoryEntity();
+        category.setConcept(categoryName);
+        if (isForExpenses){
+            category.setType(Clasification.GASTO);
+        }else {
+            category.setType(Clasification.INGRESO);
+        }
+        try {
+            viewModel.insert(category);
+            Util.getAlertDialog("Guardado correctamente", "Has guardado una Categoría", CategoryForm.this);
+        } catch (Exception e){
+            Util.getAlertDialog("Falló el guardado", "Se ha producido un error al guardar", CategoryForm.this);
+        }
+    }
+
 }
