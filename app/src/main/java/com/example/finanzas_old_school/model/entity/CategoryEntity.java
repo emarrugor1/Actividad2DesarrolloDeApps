@@ -10,6 +10,7 @@ public class CategoryEntity {
     private int id;
     @ColumnInfo(typeAffinity = ColumnInfo.TEXT)
     private Clasification type;
+    @ColumnInfo(typeAffinity = ColumnInfo.TEXT)
     private String concept;
 
     public int getId() {

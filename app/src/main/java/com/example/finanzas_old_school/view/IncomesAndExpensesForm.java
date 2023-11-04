@@ -7,7 +7,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
-import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Switch;
@@ -15,6 +14,7 @@ import android.widget.Switch;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.lifecycle.LiveData;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.example.finanzas_old_school.R;
@@ -25,9 +25,12 @@ import com.example.finanzas_old_school.util.Util;
 import com.example.finanzas_old_school.viewmodel.CategoryViewModel;
 import com.example.finanzas_old_school.viewmodel.MovementViewModel;
 
-import java.text.MessageFormat;
-import java.util.ArrayList;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.List;
+import java.util.Locale;
+import java.util.concurrent.Executor;
+import java.util.concurrent.Executors;
 
 public class IncomesAndExpensesForm extends AppCompatActivity {
 
@@ -39,6 +42,7 @@ public class IncomesAndExpensesForm extends AppCompatActivity {
     private Spinner categorySelectorList;
     private CategoryViewModel categoryViewModel;
     private MovementViewModel viewModel;
+    private Executor executor = Executors.newSingleThreadExecutor();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,23 +53,38 @@ public class IncomesAndExpensesForm extends AppCompatActivity {
         setSupportActionBar(toolbar);
         categoryViewModel = new ViewModelProvider(this).get(CategoryViewModel.class);
         viewModel = new ViewModelProvider(this).get(MovementViewModel.class);
-        categorySelectorList = findViewById(R.id.categorySelectorList);
-        categoryViewModel.getAllCategories().observe(this, categorias -> {
-            List<String> nombresCategorias = new ArrayList<>();
-            for (CategoryEntity categoria : categorias) {
-                nombresCategorias.add(categoria.getConcept());
-            }
 
-            ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, nombresCategorias);
-            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-            categorySelectorList.setAdapter(adapter);
+        categorySelectorList = findViewById(R.id.categorySelectorList);
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        categorySelectorList.setAdapter(adapter);
+
+        incomeOrExpenseClassifier= findViewById(R.id.incomeOrExpenseClassifier);
+        incomeOrExpenseClassifier.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            LiveData<List<CategoryEntity>> categoriasLiveData = isChecked ?
+                    categoryViewModel.getCategoriesByClasification(Clasification.GASTO) :
+                    categoryViewModel.getCategoriesByClasification(Clasification.INGRESO);
+
+            categoriasLiveData.observe(this, categories -> {
+                adapter.clear();
+                for (CategoryEntity category : categories) {
+                    adapter.add(category.getConcept());
+                }
+            });
         });
     }
     public void showCalendar(View view){
-        DatePickerDialog datePickerDialog = new DatePickerDialog(this,
-                (view1, year, month, dayOfMonth) ->
-                        movementDate.setText(
-                                MessageFormat.format("{0}/{1}/{2}", dayOfMonth, month, year)),2021,0,1);
+        Calendar calendar = Calendar.getInstance();
+        DatePickerDialog datePickerDialog = new DatePickerDialog(this, (view1, year, month, dayOfMonth) -> {
+            Calendar selectedDate = Calendar.getInstance();
+            selectedDate.set(year, month, dayOfMonth);
+
+            SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault());
+            String formattedDate = sdf.format(selectedDate.getTime());
+
+            movementDate.setText(formattedDate);
+        }, calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DAY_OF_MONTH));
         datePickerDialog.show();
     }
     @Override
@@ -108,6 +127,15 @@ public class IncomesAndExpensesForm extends AppCompatActivity {
         }else {
             movementEntity.setType(Clasification.INGRESO);
         }
+
+        String categoryConcept = categorySelectorList.getSelectedItem().toString();
+
+        executor.execute(() ->{
+            CategoryEntity categoryByConcept = categoryViewModel.getCategoryByConcept(categoryConcept);
+            int categoryId = categoryByConcept.getId();
+            movementEntity.setId(categoryId);
+        });
+
         try {
             viewModel.insert(movementEntity);
             Util.getAlertDialog("Guardado correctamente", "Has guardado un Movimiento", IncomesAndExpensesForm.this);

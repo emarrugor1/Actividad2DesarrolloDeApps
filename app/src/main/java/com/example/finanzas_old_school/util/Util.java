@@ -4,8 +4,6 @@ import android.content.Context;
 
 import androidx.appcompat.app.AlertDialog;
 
-import com.example.finanzas_old_school.view.CategoryForm;
-
 public class Util {
     private Util(){}
 
