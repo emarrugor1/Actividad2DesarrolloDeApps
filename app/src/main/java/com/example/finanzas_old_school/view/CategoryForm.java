@@ -55,7 +55,7 @@ public class CategoryForm extends AppCompatActivity {
     }
 
     public void goToMovementsForm(View view){
-        Intent intent = new Intent(this, IncomesAndExpensesForm.class);
+        Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
     public void insertCategory(View view){
