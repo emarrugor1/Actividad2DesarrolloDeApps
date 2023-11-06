@@ -1,6 +1,5 @@
 package com.example.finanzas_old_school.model.dto;
 
-import java.io.StringBufferInputStream;
 
 public class CategoryDto {
 

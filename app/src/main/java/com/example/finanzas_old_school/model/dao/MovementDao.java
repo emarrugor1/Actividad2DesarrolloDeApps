@@ -15,6 +15,8 @@ import java.util.List;
 public interface MovementDao {
     @Query("SELECT * FROM movimientos")
     LiveData<List<MovementEntity>> getAll();
+    @Query("SELECT * FROM movimientos WHERE id = :id")
+    MovementEntity getMovementEntityById(int id);
 
     @Insert
     void insert(MovementEntity movement);

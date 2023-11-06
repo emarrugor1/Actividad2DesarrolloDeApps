@@ -8,20 +8,21 @@ import android.os.Bundle;
 
 import com.example.finanzas_old_school.R;
 import com.example.finanzas_old_school.model.dto.CategoryDto;
-import com.example.finanzas_old_school.viewmodel.MyAdapter;
+import com.example.finanzas_old_school.util.CategoryListAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+public class CategoryListActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.category_list_activity);
 
         RecyclerView recyclerView = findViewById(R.id.reciclerViewListCategory);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+
         CategoryDto categoria1 = new CategoryDto();
         categoria1.setConcepto("Gastos de Transporte");
         categoria1.setTipo("Gasto");
@@ -33,8 +34,10 @@ public class MainActivity extends AppCompatActivity {
         lista.add(categoria1);
         lista.add(categoria2);
 
+        CategoryListAdapter adapter = new CategoryListAdapter(lista, this);
 
-        MyAdapter adapter = new MyAdapter(lista);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setHasFixedSize(true);
         recyclerView.setAdapter(adapter);
     }
 }
