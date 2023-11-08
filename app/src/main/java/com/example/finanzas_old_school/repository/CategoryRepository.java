@@ -26,6 +26,9 @@ public class CategoryRepository {
     public LiveData<List<CategoryEntity>> getAllCategories() {
         return allCategories;
     }
+    public List<CategoryEntity> getAll() {
+        return categoryDao.getAllCategories();
+    }
 
     public void insert(CategoryEntity dato) {
         executor.execute(() -> {

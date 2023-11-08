@@ -48,7 +48,7 @@ public class CategoryForm extends AppCompatActivity {
             Intent intent = new Intent(this, this.getClass());
             startActivity(intent);
         } else if (id == R.id.movementsItem) {
-            Intent intent = new Intent(this, IncomesAndExpensesForm.class);
+            Intent intent = new Intent(this, MovementsForm.class);
             startActivity(intent);
         }
         return super.onOptionsItemSelected(item);

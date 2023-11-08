@@ -32,7 +32,7 @@ import java.util.Locale;
 import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
 
-public class IncomesAndExpensesForm extends AppCompatActivity {
+public class MovementsForm extends AppCompatActivity {
 
     private Toolbar toolbar;
     private EditText conceptField;
@@ -138,9 +138,9 @@ public class IncomesAndExpensesForm extends AppCompatActivity {
 
         try {
             viewModel.insert(movementEntity);
-            Util.getAlertDialog("Guardado correctamente", "Has guardado un Movimiento", IncomesAndExpensesForm.this);
+            Util.getAlertDialog("Guardado correctamente", "Has guardado un Movimiento", MovementsForm.this);
         } catch (Exception e){
-            Util.getAlertDialog("Falló el guardado", "Se ha producido un error al guardar", IncomesAndExpensesForm.this);
+            Util.getAlertDialog("Falló el guardado", "Se ha producido un error al guardar", MovementsForm.this);
         }
     }
 

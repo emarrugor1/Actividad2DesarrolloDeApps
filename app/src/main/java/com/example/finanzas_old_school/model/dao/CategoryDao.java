@@ -16,6 +16,8 @@ import java.util.List;
 public interface CategoryDao {
     @Query("SELECT * FROM categorias")
     LiveData<List<CategoryEntity>> getAll();
+    @Query("SELECT * FROM categorias")
+    List<CategoryEntity> getAllCategories();
     @Query("SELECT * FROM categorias WHERE type = :categoryType")
     LiveData<List<CategoryEntity>> getCategoriesByClassification(Clasification categoryType);
     @Query("SELECT * FROM categorias WHERE concept = :concept")

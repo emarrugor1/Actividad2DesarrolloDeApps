@@ -1,14 +1,14 @@
 package com.example.finanzas_old_school.util;
 
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+
 import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.finanzas_old_school.R;
 import com.example.finanzas_old_school.model.dto.CategoryDto;
@@ -26,7 +26,15 @@ public class CategoryListAdapter extends RecyclerView.Adapter<CategoryListAdapte
             this.context = context;
         }
 
-        @NonNull
+    public List<CategoryDto> getCategoryDtoList() {
+        return categoryDtoList;
+    }
+
+    public void setCategoryDtoList(List<CategoryDto> categoryDtoList) {
+        this.categoryDtoList = categoryDtoList;
+    }
+
+    @NonNull
         @Override
         public CategoryListAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
             View view = inflater.inflate(R.layout.item_category, null);
