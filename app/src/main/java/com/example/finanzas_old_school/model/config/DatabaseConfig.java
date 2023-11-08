@@ -22,7 +22,7 @@ public abstract class DatabaseConfig extends RoomDatabase {
             synchronized (DatabaseConfig.class) {
                 if (INSTANCE == null) {
                     INSTANCE = Room.databaseBuilder(context.getApplicationContext(),
-                                    DatabaseConfig.class, "finanzas_db")
+                                    DatabaseConfig.class, "finanzas_db_v1")
                             .build();
                 }
             }

@@ -47,7 +47,7 @@ public class MovementsForm extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_incomes_and_expenses_form);
+        setContentView(R.layout.movements_form);
         movementDate = findViewById(R.id.movementDate);
         toolbar = findViewById(R.id.movementsToolbar);
         setSupportActionBar(toolbar);
@@ -102,6 +102,9 @@ public class MovementsForm extends AppCompatActivity {
             startActivity(intent);
         } else if (id == R.id.movementsItem) {
             Intent intent = new Intent(this, this.getClass());
+            startActivity(intent);
+        } else if (id == R.id.categoryListItem) {
+            Intent intent = new Intent(this, CategoryListActivity.class);
             startActivity(intent);
         }
         return super.onOptionsItemSelected(item);

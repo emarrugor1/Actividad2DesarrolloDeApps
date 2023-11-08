@@ -2,15 +2,16 @@ package com.example.finanzas_old_school.model.entity;
 
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
+import androidx.room.Index;
 import androidx.room.PrimaryKey;
 
-@Entity(tableName = "categorias")
+@Entity(tableName = "categorias", indices = {@Index(value = "concept", unique = true)})
 public class CategoryEntity {
     @PrimaryKey(autoGenerate = true)
     private int id;
     @ColumnInfo(typeAffinity = ColumnInfo.TEXT)
     private Clasification type;
-    @ColumnInfo(typeAffinity = ColumnInfo.TEXT)
+    @ColumnInfo(typeAffinity = ColumnInfo.TEXT, name = "concept")
     private String concept;
 
     public int getId() {

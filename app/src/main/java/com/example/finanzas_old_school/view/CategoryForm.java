@@ -50,6 +50,9 @@ public class CategoryForm extends AppCompatActivity {
         } else if (id == R.id.movementsItem) {
             Intent intent = new Intent(this, MovementsForm.class);
             startActivity(intent);
+        } else if (id == R.id.categoryListItem) {
+            Intent intent = new Intent(this, CategoryListActivity.class);
+            startActivity(intent);
         }
         return super.onOptionsItemSelected(item);
     }
