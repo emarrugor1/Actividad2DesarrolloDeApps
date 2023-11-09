@@ -57,7 +57,6 @@ public class CategoryForm extends AppCompatActivity {
             Intent intent = new Intent(this,MovementsListActivity.class);
             startActivity(intent);
         }
-
         return super.onOptionsItemSelected(item);
     }
 

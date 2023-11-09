@@ -17,8 +17,6 @@
     <string name="save_income_or_expense_button">Guardar</string>
     <string name="category_selector_spinner">Elija la categoría</string>
     <string name="go_to_movement_form">Ir a formulario de movimientos</string>
-    <string name="go_to_category_form">Ir a formulario de categoría</string>
-    <string name="goToMovementForm">Ir a formulario de movimientos</string>
 
     <string name="categoryItem">Ir a formulario de categoría</string>
     <string name="movementsItem">Ir a formulario de movimientos</string>

@@ -1,16 +1,16 @@
 package com.example.finanzas_old_school.model.dto;
 
-public class MoveDto {
+public class MovementDto {
     private String clase ;
     private String concepto;
     private String valor;
     private String fecha;
 
-    public MoveDto(String clase, String concepto, String valor, String fecha) {
-        this.clase = clase;
-        this.concepto = concepto;
-        this.valor = valor;
-        this.fecha = fecha;
+    public MovementDto() {
+        this.clase = "";
+        this.concepto = "";
+        this.valor = "";
+        this.fecha = "";
     }
 
     public String getClase() {

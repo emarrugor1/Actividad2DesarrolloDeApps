@@ -11,27 +11,27 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.finanzas_old_school.R;
-import com.example.finanzas_old_school.model.dto.MoveDto;
+import com.example.finanzas_old_school.model.dto.MovementDto;
 
 import java.util.List;
 
 public class MoveListAdapter extends RecyclerView.Adapter<MoveListAdapter.ViewHolder>{
-        private List<MoveDto> moveDtoList;
+        private List<MovementDto> movementDtoList;
         private final LayoutInflater inflater;
         private final Context context;
 
-        public MoveListAdapter(List<MoveDto> moveDtoList, Context context) {
-            this.moveDtoList = moveDtoList;
+        public MoveListAdapter(List<MovementDto> movementDtoList, Context context) {
+            this.movementDtoList = movementDtoList;
             this.inflater = LayoutInflater.from(context);
             this.context = context;
         }
 
-    public List<MoveDto> getMoveDtoList() {
-        return moveDtoList;
+    public List<MovementDto> getMoveDtoList() {
+        return movementDtoList;
     }
 
-    public void setMoveDtoList(List<MoveDto> moveDtoList) {
-        this.moveDtoList = moveDtoList;
+    public void setMoveDtoList(List<MovementDto> movementDtoList) {
+        this.movementDtoList = movementDtoList;
     }
 
     @NonNull
@@ -43,13 +43,13 @@ public class MoveListAdapter extends RecyclerView.Adapter<MoveListAdapter.ViewHo
 
         @Override
         public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-            holder.bindData(moveDtoList.get(position));
+            holder.bindData(movementDtoList.get(position));
 
         }
 
         @Override
         public int getItemCount() {
-            return moveDtoList.size();
+            return movementDtoList.size();
         }
 
         public static class ViewHolder extends RecyclerView.ViewHolder {
@@ -70,11 +70,11 @@ public class MoveListAdapter extends RecyclerView.Adapter<MoveListAdapter.ViewHo
                 btnUpdate = itemView.findViewById(R.id.btn_update);
                 btnDelete = itemView.findViewById(R.id.btn_delete);
             }
-            void bindData(MoveDto moveDto){
-                tvClase.setText(moveDto.getClase());
-                tvConcepto.setText(moveDto.getConcepto());
-                tvValue.setText(moveDto.getValor());
-                tvFecha.setText(moveDto.getFecha());
+            void bindData(MovementDto movementDto){
+                tvClase.setText(movementDto.getClase());
+                tvConcepto.setText(movementDto.getConcepto());
+                tvValue.setText(movementDto.getValor());
+                tvFecha.setText(movementDto.getFecha());
 
                 btnUpdate.setText("Actualizar");
                 btnDelete.setText("Eliminar");

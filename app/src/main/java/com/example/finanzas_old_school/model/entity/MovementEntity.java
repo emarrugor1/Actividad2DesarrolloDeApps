@@ -43,6 +43,7 @@ public class MovementEntity {
         return value;
     }
 
+
     public void setValue(double value) {
         this.value = value;
     }
@@ -62,4 +63,5 @@ public class MovementEntity {
     public void setCategoryId(int categoryId) {
         this.categoryId = categoryId;
     }
+
 }

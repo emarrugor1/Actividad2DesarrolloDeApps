@@ -7,6 +7,7 @@ import androidx.room.Insert;
 import androidx.room.Query;
 import androidx.room.Update;
 
+import com.example.finanzas_old_school.model.entity.CategoryEntity;
 import com.example.finanzas_old_school.model.entity.MovementEntity;
 
 import java.util.List;
@@ -15,6 +16,10 @@ import java.util.List;
 public interface MovementDao {
     @Query("SELECT * FROM movimientos")
     LiveData<List<MovementEntity>> getAll();
+
+    @Query("SELECT * FROM movimientos")
+    List<MovementEntity> getAllMoves();
+
     @Query("SELECT * FROM movimientos WHERE id = :id")
     MovementEntity getMovementEntityById(int id);
 

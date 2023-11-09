@@ -5,6 +5,7 @@ import android.app.Application;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 
+import com.example.finanzas_old_school.model.entity.CategoryEntity;
 import com.example.finanzas_old_school.model.entity.MovementEntity;
 import com.example.finanzas_old_school.repository.MovementRepository;
 
@@ -23,6 +24,10 @@ public class MovementViewModel extends AndroidViewModel {
     public LiveData<List<MovementEntity>> getAllMovements() {
         return allMovements;
     }
+    public List<MovementEntity> getAll() {
+        return movementRepository.getAll();
+    }
+
 
     public void insert(MovementEntity dato) {
         movementRepository.insert(dato);

@@ -6,6 +6,7 @@ import androidx.lifecycle.LiveData;
 
 import com.example.finanzas_old_school.model.config.DatabaseConfig;
 import com.example.finanzas_old_school.model.dao.MovementDao;
+import com.example.finanzas_old_school.model.entity.CategoryEntity;
 import com.example.finanzas_old_school.model.entity.MovementEntity;
 
 import java.util.List;
@@ -25,6 +26,11 @@ public class MovementRepository {
     public LiveData<List<MovementEntity>> getAllMovements() {
         return allMovements;
     }
+
+    public List<MovementEntity> getAll() {
+        return movementDao.getAllMoves();
+    }
+
 
     public void insert(MovementEntity dato) {
         executor.execute(() -> {

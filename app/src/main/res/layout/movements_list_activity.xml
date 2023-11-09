@@ -8,11 +8,21 @@
     android:orientation="vertical"
     tools:context=".view.MovementsListActivity">
     <!-- Titulo principal -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarMoveList"
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/txt_ttl"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="334dp"
+        android:layout_height="47dp"
         android:layout_margin="8dp"
         android:layout_marginStart="1dp"
         android:layout_marginTop="1dp"
@@ -40,7 +50,7 @@
         android:layout_marginTop="5dp"
         android:layout_marginEnd="1dp"
         android:layout_marginBottom="1dp"
-        app:layout_constraintBottom_toTopOf="@+id/recyclerView"
+        app:layout_constraintBottom_toTopOf="@+id/recyclerViewListMove"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txt_ttl">
@@ -93,7 +103,8 @@
             app:layout_constraintEnd_toStartOf="@+id/btnfechafin"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toEndOf="@+id/btnfechaini"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="SpeakableTextPresentCheck" />
 
         <Button
             android:id="@+id/btnfechafin"
@@ -131,9 +142,9 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
-        android:layout_width="409dp"
-        android:layout_height="606dp"
+        android:id="@+id/recyclerViewListMove"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:layout_marginStart="1dp"
         android:layout_marginTop="4dp"
         android:layout_marginEnd="1dp"
