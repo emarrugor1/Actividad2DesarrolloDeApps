@@ -14,9 +14,9 @@ import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
 
 public class CategoryRepository {
-    private CategoryDao categoryDao;
-    private LiveData<List<CategoryEntity>> allCategories;
-    private Executor executor = Executors.newSingleThreadExecutor();
+    private final CategoryDao categoryDao;
+    private final LiveData<List<CategoryEntity>> allCategories;
+    private final Executor executor = Executors.newSingleThreadExecutor();
     public CategoryRepository(Application application) {
         DatabaseConfig database = DatabaseConfig.getInstance(application);
         categoryDao = database.categoryDao();

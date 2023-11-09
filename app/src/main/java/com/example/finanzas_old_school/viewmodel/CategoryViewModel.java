@@ -12,8 +12,8 @@ import com.example.finanzas_old_school.repository.CategoryRepository;
 import java.util.List;
 
 public class CategoryViewModel extends AndroidViewModel {
-    private CategoryRepository categoryRepository;
-    private LiveData<List<CategoryEntity>> allCategories;
+    private final CategoryRepository categoryRepository;
+    private final LiveData<List<CategoryEntity>> allCategories;
 
     public CategoryViewModel(Application application) {
         super(application);

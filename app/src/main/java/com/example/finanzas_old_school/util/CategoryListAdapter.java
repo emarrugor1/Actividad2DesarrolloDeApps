@@ -17,8 +17,8 @@ import java.util.List;
 
 public class CategoryListAdapter extends RecyclerView.Adapter<CategoryListAdapter.ViewHolder>{
         private List<CategoryDto> categoryDtoList;
-        private LayoutInflater inflater;
-        private Context context;
+        private final LayoutInflater inflater;
+        private final Context context;
 
         public CategoryListAdapter(List<CategoryDto> categoryDtoList, Context context) {
             this.categoryDtoList = categoryDtoList;

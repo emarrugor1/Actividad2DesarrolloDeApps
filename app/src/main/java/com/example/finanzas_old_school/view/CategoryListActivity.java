@@ -27,7 +27,7 @@ public class CategoryListActivity extends AppCompatActivity {
 
     private Toolbar toolbar;
     private CategoryViewModel categoryViewModel;
-    private Executor executor = Executors.newSingleThreadExecutor();
+    private final Executor executor = Executors.newSingleThreadExecutor();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -42,7 +42,7 @@ public class MovementsForm extends AppCompatActivity {
     private Spinner categorySelectorList;
     private CategoryViewModel categoryViewModel;
     private MovementViewModel viewModel;
-    private Executor executor = Executors.newSingleThreadExecutor();
+    private final Executor executor = Executors.newSingleThreadExecutor();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

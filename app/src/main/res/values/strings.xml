@@ -23,5 +23,12 @@
     <string name="categoryItem">Ir a formulario de categoría</string>
     <string name="movementsItem">Ir a formulario de movimientos</string>
     <string name="go_to_category_list">Ir a lista de categorías</string>
+    <string name="go_to_movements_list">Ir a lista de movimientos</string>
+    <!-- Agregado por AVS -->
+    <string name="go_to_movements_list_view_ttl">listado de movimientos</string>
+    <string name="btn_text_buscar">Buscar</string>
+
+
+
 
 </resources>

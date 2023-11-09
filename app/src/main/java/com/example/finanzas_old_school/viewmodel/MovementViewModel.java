@@ -11,8 +11,8 @@ import com.example.finanzas_old_school.repository.MovementRepository;
 import java.util.List;
 
 public class MovementViewModel extends AndroidViewModel {
-    private MovementRepository movementRepository;
-    private LiveData<List<MovementEntity>> allMovements;
+    private final MovementRepository movementRepository;
+    private final LiveData<List<MovementEntity>> allMovements;
 
     public MovementViewModel(Application application) {
         super(application);

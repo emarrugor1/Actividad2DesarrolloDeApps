@@ -13,9 +13,9 @@ import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
 
 public class MovementRepository {
-    private MovementDao movementDao;
-    private LiveData<List<MovementEntity>> allMovements;
-    private Executor executor = Executors.newSingleThreadExecutor(); // Crea un Executor de un solo hilo
+    private final MovementDao movementDao;
+    private final LiveData<List<MovementEntity>> allMovements;
+    private final Executor executor = Executors.newSingleThreadExecutor(); // Crea un Executor de un solo hilo
     public MovementRepository(Application application) {
         DatabaseConfig database = DatabaseConfig.getInstance(application);
         movementDao = database.movementDao();

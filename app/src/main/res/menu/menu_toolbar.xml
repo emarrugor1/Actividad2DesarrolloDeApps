@@ -11,4 +11,7 @@
     <item
         android:id="@+id/categoryListItem"
         android:title="@string/go_to_category_list" />
+    <item
+        android:id="@+id/movementsListItem"
+        android:title="@string/go_to_movements_list" />
 </menu>
