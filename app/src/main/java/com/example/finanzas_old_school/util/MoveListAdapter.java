@@ -37,7 +37,7 @@ public class MoveListAdapter extends RecyclerView.Adapter<MoveListAdapter.ViewHo
     @NonNull
         @Override
         public MoveListAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-            View view = inflater.inflate(R.layout.item_category, null);
+            View view = inflater.inflate(R.layout.item_movements, null);
             return new MoveListAdapter.ViewHolder(view);
         }
 

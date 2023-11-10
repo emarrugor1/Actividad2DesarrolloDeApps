@@ -6,6 +6,8 @@ import android.view.MenuItem;
 
 import android.widget.Button;
 import android.widget.EditText;
+
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.annotation.NonNull;
 import androidx.appcompat.widget.Toolbar;
@@ -26,15 +28,10 @@ import java.util.stream.Collectors;
 
 public class MovementsListActivity extends AppCompatActivity {
 
-    Toolbar toolbar;
+    private Toolbar toolbar;
     private MovementViewModel moveViewModel;
     private final Executor executor = Executors.newSingleThreadExecutor();
 
-
-     Button btnFechaIni,btnFechaFin;
-     EditText edtFechaIni,edtFechaFin;
-    /*recyclerViewListMove*/
-    /*toolbarMoveList*/
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,21 +40,10 @@ public class MovementsListActivity extends AppCompatActivity {
         /*Soporte a la barra de herramientas*/
         toolbar = findViewById(R.id.toolbarMoveList);
         setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle("Movimientos");
 
         moveViewModel = new ViewModelProvider(this).get(MovementViewModel.class);
         RecyclerView recyclerView = findViewById(R.id.recyclerViewListMove);
-
-
-        /*Captura Fecha inicial y Fecha Final*/
-        edtFechaIni = findViewById(R.id.edtfechaini);
-        edtFechaFin =findViewById(R.id.edtfechafin);
-
-        /*Botones fecha inicial fecha final*/
-        btnFechaIni=findViewById(R.id.btnfechaini);
-        btnFechaFin=findViewById(R.id.btnfechafin);
-
-        /*btnFechaIni.setOnClickListener(null);*/
-        /*btnFechaFin.setOnClickListener(null);*/
 
         executor.execute(()-> {
             List<MovementDto> list = moveViewModel.getAll()
@@ -88,7 +74,7 @@ public class MovementsListActivity extends AppCompatActivity {
             Intent intent = new Intent(this, MovementsForm.class);
             startActivity(intent);
         } else if (id == R.id.categoryListItem) {
-            Intent intent = new Intent(this, this.getClass());
+            Intent intent = new Intent(this, CategoryListActivity.class);
             startActivity(intent);
         }else if (id == R.id.movementsListItem) {
             Intent intent = new Intent(this, this.getClass());

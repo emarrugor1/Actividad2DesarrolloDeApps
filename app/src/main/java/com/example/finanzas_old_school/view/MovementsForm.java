@@ -106,6 +106,9 @@ public class MovementsForm extends AppCompatActivity {
         } else if (id == R.id.categoryListItem) {
             Intent intent = new Intent(this, CategoryListActivity.class);
             startActivity(intent);
+        }else if (id == R.id.movementsListItem) {
+            Intent intent = new Intent(this, MovementsListActivity.class);
+            startActivity(intent);
         }
         return super.onOptionsItemSelected(item);
     }

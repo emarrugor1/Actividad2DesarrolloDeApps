@@ -1,8 +1,16 @@
 package com.example.finanzas_old_school.util;
 
+import static androidx.core.content.ContextCompat.startActivity;
+
 import android.content.Context;
+import android.content.Intent;
 
 import androidx.appcompat.app.AlertDialog;
+
+import com.example.finanzas_old_school.R;
+import com.example.finanzas_old_school.view.CategoryForm;
+import com.example.finanzas_old_school.view.CategoryListActivity;
+import com.example.finanzas_old_school.view.MovementsForm;
 
 public class Util {
     private Util(){}

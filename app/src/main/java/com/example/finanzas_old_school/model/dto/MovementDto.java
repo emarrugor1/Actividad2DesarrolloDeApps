@@ -6,12 +6,7 @@ public class MovementDto {
     private String valor;
     private String fecha;
 
-    public MovementDto() {
-        this.clase = "";
-        this.concepto = "";
-        this.valor = "";
-        this.fecha = "";
-    }
+    public MovementDto() {}
 
     public String getClase() {
         return clase;

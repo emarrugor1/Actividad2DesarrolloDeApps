@@ -35,6 +35,7 @@ public class CategoryListActivity extends AppCompatActivity {
         setContentView(R.layout.category_list_activity);
         toolbar = findViewById(R.id.toolbarCategoryList);
         setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle("Categorías");
 
         categoryViewModel = new ViewModelProvider(this).get(CategoryViewModel.class);
 
@@ -71,6 +72,9 @@ public class CategoryListActivity extends AppCompatActivity {
             startActivity(intent);
         } else if (id == R.id.categoryListItem) {
             Intent intent = new Intent(this, this.getClass());
+            startActivity(intent);
+        }else if (id == R.id.movementsListItem) {
+            Intent intent = new Intent(this, MovementsListActivity.class);
             startActivity(intent);
         }
         return super.onOptionsItemSelected(item);
